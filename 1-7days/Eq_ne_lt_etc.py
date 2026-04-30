@@ -11,8 +11,17 @@ class Cars:
         if other is None or not isinstance(other, Cars):
             return False
         return self.name == other.name
-
+class helicopter:
+    def __init__(self, size):
+        self.size = size
+    def __lt__(self, other):
+        if other is None or not isinstance(other, helicopter):
+            return False
+        return self.size < other.size
 if __name__ == "__main__":
     car1 = Cars("BMW")
     car2 = Cars("BMW")
+    helicopter_small = helicopter(34)
+    helicopter_big = helicopter(45)
+    print(helicopter_small < helicopter_big)
     print(car1 == car2)
